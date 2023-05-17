@@ -1,0 +1,108 @@
+openapi: 3.0.1
+info:
+  title: Nuvalence Todo API
+  description: A simple TODO API allowing CRUD operations on TODO tasks.
+  version: '1.0.0'
+servers:
+  - url: 'https://todo-api-afnt6cqzyq-ue.a.run.app/'
+paths:
+  /todos:
+    get:
+      operationId: getTodos
+      summary: Retrieve a list of all TODO items.
+      responses:
+        '200':
+          description: Successfully retrieved TODO items.
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Todo'
+    post:
+      operationId: createTodo
+      summary: Create a new TODO item.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TodoInput'
+      responses:
+        '201':
+          description: Successfully created TODO item.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Todo'
+  /todos/{id}:
+    get:
+      operationId: getTodo
+      summary: Retrieve a specific TODO item by its ID.
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Unique ID of the TODO item.
+      responses:
+        '200':
+          description: Successfully retrieved TODO item.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Todo'
+    put:
+      operationId: updateTodo
+      summary: Update a specific TODO item by its ID.
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Unique ID of the TODO item.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TodoInput'
+      responses:
+        '200':
+          description: Successfully updated TODO item.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Todo'
+    delete:
+      operationId: deleteTodo
+      summary: Delete a specific TODO item by its ID.
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: string
+          required: true
+          description: Unique ID of the TODO item.
+      responses:
+        '204':
+          description: Successfully deleted TODO item.
+components:
+  schemas:
+    Todo:
+      type: object
+      properties:
+        id:
+          type: string
+          description: The ID of the TODO item.
+        task:
+          type: string
+          description: The task description.
+    TodoInput:
+      type: object
+      properties:
+        task:
+          type: string
+          description: The task description.
