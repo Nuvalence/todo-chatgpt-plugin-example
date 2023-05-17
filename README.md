@@ -1,5 +1,5 @@
 # Todo ChatGPT Plugin Example
-An simple example of a ChatGPT plugin that demonstrates it's simplicity. 
+An simple example of a ChatGPT plugin. It is an Node.js Express API that supports CRUD operations on todos. 
 
 To deploy this plugin using Google Cloud Run, use the following steps: 
 
