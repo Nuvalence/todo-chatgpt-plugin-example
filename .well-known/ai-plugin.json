@@ -1,0 +1,18 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "Nuvalence Todo List",
+    "name_for_model": "nuvalence_todo",
+    "description_for_human": "Plugin for managing a todo list. You can add, remove and view your todos.",
+    "description_for_model": "Plugin for managing a todo list. You can add, remove and view your todos.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "http://www.yourapidomain.com",
+        "is_user_authenticated": false
+    },
+    "logo_url": "http://www.yourapidomain.com/public/nuvalence-logo.jpeg",
+    "contact_email": "example@example.com",
+    "legal_info_url": "http://www.yourdomain.com/legal"
+}

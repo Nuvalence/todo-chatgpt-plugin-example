@@ -4,7 +4,7 @@ info:
   description: A simple TODO API allowing CRUD operations on TODO tasks.
   version: '1.0.0'
 servers:
-  - url: 'enteryourapiurlhere.com'
+  - url: 'http://www.yourdomain.com'
 paths:
   /todos:
     get:
